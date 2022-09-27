@@ -24,7 +24,7 @@ public class AssistenteAdministrativo extends Assistente {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(final String turno) {
         this.turno = turno.toUpperCase();
     }
 

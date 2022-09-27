@@ -16,7 +16,7 @@ public class Vip extends Ingresso {
         return valorAdicional;
     }
 
-    public void setValorAdicional(float valorAdicional) {
+    public void setValorAdicional(final float valorAdicional) {
         this.valorAdicional = valorAdicional;
     }
 

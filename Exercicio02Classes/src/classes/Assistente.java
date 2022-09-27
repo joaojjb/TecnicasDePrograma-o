@@ -12,7 +12,7 @@ public class Assistente extends Funcionario {
         return numeroDeMatricula;
     }
 
-    public void setNumeroDeMatricula(String numeroDeMatricula) {
+    public void setNumeroDeMatricula(final String numeroDeMatricula) {
         this.numeroDeMatricula = numeroDeMatricula;
     }
 

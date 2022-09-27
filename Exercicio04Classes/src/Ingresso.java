@@ -12,7 +12,7 @@ public class Ingresso {
     }
 
 
-    public void setValor(float valor) {
+    public void setValor(final float valor) {
         this.valor = valor;
     }
 

@@ -14,7 +14,7 @@ public class AssistenteTecnico extends Assistente {
         return bonusSalarial;
     }
 
-    public void setBonusSalarial(float bonusSalarial) {
+    public void setBonusSalarial(final float bonusSalarial) {
         this.bonusSalarial = bonusSalarial;
     }
     

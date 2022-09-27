@@ -11,13 +11,13 @@ public class Funcionario extends Pessoa {
     public int getMatricula() {
         return matricula;
     }
-    public void setMatricula(int matricula) {
+    public void setMatricula(final int matricula) {
         this.matricula = matricula;
     }
     public double getSalario() {
         return salario;
     }
-    public boolean setSalario(double salario) {
+    public boolean setSalario(final double salario) {
         if(salario < 1) return false;
 
         this.salario = salario;

@@ -16,13 +16,13 @@ public class Pessoa {
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
+    public void setNome(final String nome) {
         this.nome = nome;
     }
     public String getSobrenome() {
         return sobrenome;
     }
-    public void setSobrenome(String sobrenome) {
+    public void setSobrenome(final String sobrenome) {
         this.sobrenome = sobrenome;
     }
 

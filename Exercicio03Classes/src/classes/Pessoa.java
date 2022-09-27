@@ -4,7 +4,7 @@ public class Pessoa {
     private int idade;
 
     //AllArgsConstructor
-    public Pessoa(String nome, int idade) {
+    public Pessoa(final String nome, final int idade) {
         this.nome = nome;
         this.idade = idade;
     }
@@ -18,13 +18,13 @@ public class Pessoa {
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
+    public void setNome(final String nome) {
         this.nome = nome;
     }
     public int getIdade() {
         return idade;
     }
-    public void setIdade(int idade) {
+    public void setIdade(final int idade) {
         this.idade = idade;
     }
 
