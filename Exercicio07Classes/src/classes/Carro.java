@@ -1,3 +1,4 @@
+package classes;
 public class Carro extends Transporte {
     private int quilometragem;
 

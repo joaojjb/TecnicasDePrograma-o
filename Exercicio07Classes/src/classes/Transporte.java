@@ -1,3 +1,4 @@
+package classes;
 public class Transporte {
     private boolean ligado;
     private int velocidade;
