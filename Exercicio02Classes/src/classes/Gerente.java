@@ -9,7 +9,7 @@ public class Gerente extends Funcionario{
 
 
    public float calculaAumentaSalario(){
-        float salarioBase = getSalario();
+        float salarioBase = super.getSalario();
         return salarioBase + (salarioBase * 15/100);
    }
 

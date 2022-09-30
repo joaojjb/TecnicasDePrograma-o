@@ -7,9 +7,6 @@ public class AssistenteTecnico extends Assistente {
         this.bonusSalarial = 0;
     }
 
-
-
-
     public float getBonusSalarial() {
         return bonusSalarial;
     }
@@ -17,10 +14,10 @@ public class AssistenteTecnico extends Assistente {
     public void setBonusSalarial(final float bonusSalarial) {
         this.bonusSalarial = bonusSalarial;
     }
-    
-    public float calculaAumentaSalario(){
-        float salarioBase = getSalario();
-        return salarioBase + (salarioBase * 10/100) + this.bonusSalarial;
-   }
-    
+
+    public void calculaAumentaSalario() {
+        float salarioBase = super.getSalario();
+        super.setSalario(salarioBase + (salarioBase * 10 / 100) + this.bonusSalarial);
+    }
+
 }

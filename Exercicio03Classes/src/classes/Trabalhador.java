@@ -1,7 +1,7 @@
 package classes;
+
 public class Trabalhador extends Pessoa {
     private float dinheiro;
-
 
     public Trabalhador(final float dinheiro) {
         this.dinheiro = dinheiro;
@@ -19,14 +19,18 @@ public class Trabalhador extends Pessoa {
         this.dinheiro = dinheiro;
     }
 
-    public boolean trabalha(final String aux){
-        if(aux == null) return false;
+    public boolean trabalha(final String aux) {
+        aux.toUpperCase();
+        if (aux.equals("NAO"))
+            return false;
 
         return true;
     }
 
-    public boolean fazCompras(final String aux){
-        if(aux == null) return false;
+    public boolean fazCompras(final String aux) {
+        aux.toUpperCase();
+        if (aux.equals("NAO"))
+            return false;
 
         return true;
     }
