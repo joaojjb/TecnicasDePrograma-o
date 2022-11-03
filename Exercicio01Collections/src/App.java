@@ -3,13 +3,11 @@ import java.util.ArrayList;
 public class App{
     public static void main(String[] args) throws Exception {
         Randomizador random = new Randomizador();
-        
         ArrayList<Funcionario> listaFuncionario = new ArrayList<>();
         
-        
-
         for(int i = 0; i < 10; i ++){
             Funcionario funcionario = new Funcionario();
+            
             funcionario.setTelefone(random.geraTelefone());
             funcionario.setSalario(random.geraSalario());
             funcionario.setNome(random.geraNome());
