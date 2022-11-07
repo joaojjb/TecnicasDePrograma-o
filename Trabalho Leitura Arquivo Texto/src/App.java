@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class App {
     public static void main(String[] args) throws Exception {
-       
-
         ArrayList<Funcionario> filhosDaFunc = new ArrayList<>();
 
         String var = "";

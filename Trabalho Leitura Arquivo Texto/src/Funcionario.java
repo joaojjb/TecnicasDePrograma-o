@@ -61,7 +61,7 @@ public class Funcionario {
 
     @Override
     public String toString(){
-        return "[Matricula: " + getNumeroMatricula() + " Nome: " + getNome() + "\n Salário: " + getSalario() + " Gratificação: " + getGratificacao() + "\n Filhos: \n" + getFilhos() + " ]";
+        return  getNome() + "-- R$" + getSalario() + "-- R$" + getGratificacao() + "\n Filhos: \n" + getFilhos();
     }
 
 }
