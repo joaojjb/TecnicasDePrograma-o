@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Funcionario {
@@ -48,7 +49,9 @@ public class Funcionario {
     }
 
     public void setSalario(String salario) {
-        this.salario = salario;
+        String valorFormatado = new DecimalFormat("#,##0.00").format(Integer.parseInt(salario));
+        
+        this.salario = valorFormatado;
     }
 
     public String getGratificacao() {
@@ -56,7 +59,8 @@ public class Funcionario {
     }
 
     public void setGratificacao(String gratificacao) {
-        this.gratificacao = gratificacao;
+        String valorFormatado = new DecimalFormat("#,##0.00").format(Integer.parseInt(gratificacao));
+        this.gratificacao = valorFormatado;
     }
 
     @Override

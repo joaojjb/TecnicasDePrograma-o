@@ -34,20 +34,31 @@ public class App {
                 f1.setSalario(aux[2]);
                 f1.setGratificacao(aux[3]);
 
-                ArrayList<Filho> listaFilhos = new ArrayList<>();
+            ArrayList<Filho> listaFilhos = new ArrayList<>();
                 //Atribuindo todos os filhos de cada funcionário
+
+            if(aux.length > 4){
                 for(int j = 4; j < aux.length; j = j + 3){
                     Filho auxFilho = new Filho();
                    
 
                     auxFilho.setNomeFilho(aux[j]);
-                    auxFilho.setDataDeNascimento(aux[j + 1]);
+                    auxFilho.setDataDeNascimentoComFilho(aux[j + 1]);
                     auxFilho.setSexo(aux[j + 2]);
     
                     listaFilhos.add(auxFilho);
                     f1.setFilhos(listaFilhos);
                    
                 }
+            }else{
+                Filho auxFilho = new Filho();
+                auxFilho.setNomeFilho("<");
+                auxFilho.setDataDeNascimentoSemFilho(">");
+                auxFilho.setSexo("SEM FILHOS");
+
+                listaFilhos.add(auxFilho);
+                f1.setFilhos(listaFilhos);
+            }
                 
                 filhosDaFunc.add(f1);
             }
@@ -58,7 +69,7 @@ public class App {
         //Atribuindo todos os funcionários apenas para uma String
         String listaDeFuncionarios = "";
         for(int i = 0; i < filhosDaFunc.size(); i++){
-            listaDeFuncionarios = listaDeFuncionarios + filhosDaFunc.get(i).toString() + " ";
+            listaDeFuncionarios = listaDeFuncionarios + filhosDaFunc.get(i).toString() + "\n\n\n ";
         }
         
         JOptionPane.showMessageDialog(null, listaDeFuncionarios);
