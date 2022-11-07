@@ -7,13 +7,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 public class App {
     public static void main(String[] args) throws Exception {
-        Funcionario f1 = new Funcionario();
+       
+
         ArrayList<Funcionario> filhosDaFunc = new ArrayList<>();
 
         String var = "";
         File file = new File( "src\\ArquivoTextoTrabalho.txt");
 
-        try {
+        try  {
             BufferedReader in = new BufferedReader(new FileReader(file));
             String srt;
             while(in.ready()){
@@ -21,19 +22,48 @@ public class App {
                 var += srt + "\n\r";
             }
 
-            String[] funcionarios = var.split("\n");
+            //Adicionando cada linha em uma posição em um array de String
+            String[] funcionarios = var.split("\n\r");
 
-            for(int i = 0; i < funcionarios.length - 1; i++){
-                f1.setFuncionario(funcionarios[i]); 
+            //Setando Funcionário
+            for(int i = 0; i < funcionarios.length; i++){
+                Funcionario f1 = new Funcionario();
+                
+                //Setando Funcionário
+                String[] aux = funcionarios[i].split("-");
+                f1.setNumeroMatricula(aux[0]);
+                f1.setNome(aux[1]);
+                f1.setSalario(aux[2]);
+                f1.setGratificacao(aux[3]);
+
+                ArrayList<Filho> listaFilhos = new ArrayList<>();
+                //Atribuindo todos os filhos de cada funcionário
+                for(int j = 4; j < aux.length; j = j + 3){
+                    Filho auxFilho = new Filho();
+                   
+
+                    auxFilho.setNomeFilho(aux[j]);
+                    auxFilho.setDataDeNascimento(aux[j + 1]);
+                    auxFilho.setSexo(aux[j + 2]);
+    
+                    listaFilhos.add(auxFilho);
+                    f1.setFilhos(listaFilhos);
+                   
+                }
+                
                 filhosDaFunc.add(f1);
-            } 
+            }
             in.close();
         } catch (IOException e){
         }
 
-        filhosDaFunc.forEach(funcionario -> System.out.println(funcionario.toString())  );
-
-        //JOptionPane.showMessageDialog(null, filhosDaFunc, "Informação do Sistema",JOptionPane.INFORMATION_MESSAGE);
+        //Atribuindo todos os funcionários apenas para uma String
+        String listaDeFuncionarios = "";
+        for(int i = 0; i < filhosDaFunc.size(); i++){
+            listaDeFuncionarios = listaDeFuncionarios + filhosDaFunc.get(i).toString() + " ";
+        }
+        
+        JOptionPane.showMessageDialog(null, listaDeFuncionarios);
         
         
        

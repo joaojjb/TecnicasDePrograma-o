@@ -1,14 +1,30 @@
+import java.util.ArrayList;
+
 public class Funcionario {
     private String numeroMatricula;
     private String nome;
     private String salario;
     private String gratificacao;
+    private ArrayList<Filho> filhos;
+
+
+    
+    public String getFilhos() {
+        String filho = "";
+        for(int i = 0; i < this.filhos.size(); i++){
+           filho =  filho + " " + this.filhos.get(i).getNomeFilho() + " " 
+           + this.filhos.get(i).getSexo() + " "
+           + this.filhos.get(i).getDataDeNascimento() + "\n\r";
+            
+        }
+        return filho;
+    }
+
+    public void setFilhos(ArrayList<Filho> filhos) {
+        this.filhos = filhos;
+    }
 
     public Funcionario() {
-        this.numeroMatricula = numeroMatricula;
-        this.nome = nome;
-        this.salario = salario;
-        this.gratificacao = gratificacao;
     }
 
     public String getNumeroMatricula() {
@@ -43,18 +59,9 @@ public class Funcionario {
         this.gratificacao = gratificacao;
     }
 
-    public void setFuncionario(String funcionario){
-        String[] aux = funcionario.split("-");
-        setNumeroMatricula(aux[0]);
-        setNome(aux[1]);
-        setSalario(aux[2]);
-        setGratificacao(aux[3]);
-    }
-
-
     @Override
     public String toString(){
-        return "[Matricula: " + getNumeroMatricula() + " Nome: " + getNome() + "\n Salário: " + getSalario() + " Gratificação: " + getGratificacao() + " ]";
+        return "[Matricula: " + getNumeroMatricula() + " Nome: " + getNome() + "\n Salário: " + getSalario() + " Gratificação: " + getGratificacao() + "\n Filhos: \n" + getFilhos() + " ]";
     }
 
 }
