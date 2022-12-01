@@ -7,25 +7,39 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Tubarao extends Actor
-{
+{   
+    private int velocidade;
+    
+    public Tubarao(){
+        this.velocidade = 2;
+    }
+    
     public void act()
     {
-        move(1);
+       
+        
+        move(velocidade);
+        
+        if(isTouching(Peixe.class)){
+           this.velocidade = this.velocidade + velocidade/4;
+        }
         
         if(Greenfoot.isKeyDown("right"))
         {
-            move(2);    
+            move(velocidade + 1);    
             turn(2);
         }
         
         if(Greenfoot.isKeyDown("left")){
-            move(2);
+            move(velocidade + 1);
             turn(-2);
         }
         
          if(Greenfoot.isKeyDown("up")){
-            move(2);
+            move(velocidade + 1);
             turn(-2);
         }
+        
+        
     }
 }
