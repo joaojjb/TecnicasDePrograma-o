@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Sea extends World
 {
     Counter counter = new Counter();
-
+    Timer timer = new Timer();
     public Sea()
     {    
         super(1000, 600, 1); 
@@ -21,10 +21,23 @@ public class Sea extends World
         return counter;
     }
     
-    
+    public Timer timer()
+    {
+        return timer;
+    }
     
     private void prepare()
-    {
+    {   
+        PeixinVermei[] peixinsVermeis = new PeixinVermei[5];
+        for(int i=0; i < peixinsVermeis.length;i++)
+        {
+            peixinsVermeis[i] = new PeixinVermei();
+            int peixinX = Greenfoot.getRandomNumber(getWidth());
+            int peixinY = Greenfoot.getRandomNumber(getHeight());
+            addObject(peixinsVermeis[i], peixinX, peixinY);
+        }
+        
+        addObject(timer, 100, 65);
         addObject(counter, 100, 40);
 
         Peixe peixe = new Peixe();

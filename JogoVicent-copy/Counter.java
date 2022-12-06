@@ -19,4 +19,9 @@ public class Counter extends Actor
     {
         score++;
     }
+    
+    public void removeScore()
+    {
+        score--;
+    }
 }

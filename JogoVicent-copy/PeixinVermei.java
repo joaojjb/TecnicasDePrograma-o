@@ -1,20 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Peixe here.
+ * Write a description of class PeixinVermei here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Peixe extends Actor
+public class PeixinVermei extends Actor
 {
-       
     int xPos;
     int yPos;
     int movimentacaoHorizontal = 2;
     int movimentacaoVertical = 2;
     public void act()
-    {   
+    {
         xPos = getX();
         yPos = getY();
         
@@ -34,14 +33,8 @@ public class Peixe extends Actor
             World myWorld = getWorld();
             Sea sea = (Sea)myWorld;
             Counter counter = sea.getCounter();
-            counter.addScore();
+            counter.removeScore();
             myWorld.removeObject(this); 
         }
     }
-    
-    public void moveAround()
-    {
- 
-    }
-    
 }
