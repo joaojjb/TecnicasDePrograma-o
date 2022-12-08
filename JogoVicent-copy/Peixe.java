@@ -15,20 +15,13 @@ public class Peixe extends Actor
     int movimentacaoVertical = 2;
     public void act()
     {   
-        xPos = getX();
-        yPos = getY();
-        
-        if( (xPos > 955) || (xPos < 5) ){
-            movimentacaoHorizontal *= -1;
-        }
-        
-        if( (yPos > 555) || (yPos < 5) ){
-            movimentacaoVertical *= -1;
-        }
-        setLocation(xPos + movimentacaoHorizontal, yPos + movimentacaoVertical);
-        
-        
-        Tubarao tubarao = new Tubarao();
+        moveAround();
+        virouComida();
+     
+    }
+    
+    public void virouComida(){
+           Tubarao tubarao = new Tubarao(1,1);
         if(isTouching(Tubarao.class))
         {
             World myWorld = getWorld();
@@ -41,7 +34,17 @@ public class Peixe extends Actor
     
     public void moveAround()
     {
- 
+        xPos = getX();
+        yPos = getY();
+        
+        if( (xPos > 955) || (xPos < 5) ){
+            movimentacaoHorizontal *= -1;
+        }
+        
+        if( (yPos > 555) || (yPos < 5) ){
+            movimentacaoVertical *= -1;
+        }
+        setLocation(xPos + movimentacaoHorizontal, yPos + movimentacaoVertical);
     }
-    
+
 }

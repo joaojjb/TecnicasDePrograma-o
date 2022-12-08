@@ -10,10 +10,11 @@ public class Tubarao extends Actor
 {   
     private int velocidade;
     
-    public Tubarao(){
+    public Tubarao(int largura, int altura){
+        getImage().scale(largura,altura);
         this.velocidade = 2;
     }
-    
+
     public void act()
     {
        

@@ -9,10 +9,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Counter extends Actor
 {
     int score = 0;
+    
+    public Counter(){
+        setImage(new GreenfootImage("Score.png"));
+        getImage().scale(100,40);
+    }
     public void act()
-    {
+    {   
         setImage(
-        new GreenfootImage("Score : " + score, 24, Color.RED, Color.BLUE));
+        new GreenfootImage(":" + score, 24, Color.RED, Color.BLUE));
     }
 
     public void addScore()
